@@ -1,5 +1,5 @@
 # View side
-[Demo](https://stefanos1316.github.io/my_blog/index.html)
+[Demo](https://stefanos1316.github.io/programmers_blog/index.html)
 This side is also connected with my_portfolio repository.
 
 # About the template 
