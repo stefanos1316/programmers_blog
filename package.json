@@ -32,7 +32,10 @@
         "font-awesome": "4.7.0",
         "google-protobuf": "^3.5.0",
         "grpc": "^1.10.1",
-        "jquery": "3.3.1"
+        "hoek": "^5.0.3",
+        "jquery": "3.3.1",
+        "mime": "^2.3.1",
+        "mixin-deep": "^2.0.0"
     },
     "devDependencies": {
         "browser-sync": "2.23.6",
