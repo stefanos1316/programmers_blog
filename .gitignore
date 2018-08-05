@@ -6,3 +6,4 @@
 *.gz
 *.swp
 *.swo
+node_modules/*
