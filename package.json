@@ -31,7 +31,7 @@
         "express": "^4.16.3",
         "font-awesome": "4.7.0",
         "google-protobuf": "^3.5.0",
-        "grpc": "^1.10.1",
+        "grpc": "^1.15.1",
         "hoek": "^5.0.3",
         "jquery": "3.3.1",
         "lodash": "^4.17.10",
@@ -39,7 +39,7 @@
         "mixin-deep": "^2.0.0"
     },
     "devDependencies": {
-        "browser-sync": "2.23.6",
+        "browser-sync": "^2.26.3",
         "gulp": "^3.9.1",
         "gulp-clean-css": "3.9.2",
         "gulp-header": "2.0.1",
