@@ -9,6 +9,6 @@ before_script:
   - npm install gulp@3.9.0
 script:
   - sudo apt-get install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended
-  - npm --build-from-source install bcrypt
+  - npm install --save bcrypt-nodejs && npm uninstall --save bcrypt
   - npm i 
   - bash tools/travis-deploy.sh
