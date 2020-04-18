@@ -30,7 +30,7 @@ jobs:
           ssh-private-key: ${{ secrets.DEPLOY_KEY }}    
 
     - name: Deploy 🚀
-      uses: peaceiris/actions-gh-pages@v3
+      uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
           BASE_BRANCH: master
           SSH: true
