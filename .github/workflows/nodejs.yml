@@ -23,10 +23,15 @@ jobs:
         npm install -g gulp-cli
         npm install gulp@3.9.0
         npm i
-   
-    - name: Deploy 🚀
-      uses: stefanos1316/programming_blog.git
+  
+    - name: Install SSH Client 🔑
+      uses: webfactory/ssh-agent@v0.2.0
       with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          ssh-private-key: ${{ secrets.DEPLOY_KEY }}    
+
+    - name: Deploy 🚀
+      uses: stefanos1316/programming_blog@release/v1
+      with:
+          SSH: true
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: build
