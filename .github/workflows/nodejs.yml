@@ -21,7 +21,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Install latex packages
-      run: apt-get install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended  
+      run: sudo apt-get install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended  
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
