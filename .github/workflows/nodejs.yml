@@ -19,10 +19,10 @@ jobs:
       run: sudo apt-get install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended  
    
     - name: Install and Build 🔧
-        run: |
-          npm install -g gulp-cli
-          npm install gulp@3.9.0
-          npm i
+      run: |
+        npm install -g gulp-cli
+        npm install gulp@3.9.0
+        npm i
     
     - name: Deploy 🚀
       uses: stefanos1316/programming_blog
