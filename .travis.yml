@@ -1,5 +1,5 @@
 language: node_js
- - "13"
+ - "11"
 
 sudo: required
 dist: bionic
