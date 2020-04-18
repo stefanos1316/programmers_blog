@@ -24,7 +24,7 @@ jobs:
         npm install gulp@3.9.0
         npm i
  
-    - name: Install SSH client 🔑
+    - name: Install SSH Client 🔑
       uses: webfactory/ssh-agent@v0.2.0
       with:
           ssh-private-key: ${{ secrets.DEPLOY_KEY }}    
