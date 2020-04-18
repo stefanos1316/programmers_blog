@@ -21,9 +21,9 @@ jobs:
     
     - uses: actions/setup-node@v1
     - name: Install nodejs modules
-      run: npm install -g gulp-cli
-      run: npm install gulp@3.9.0
-      run: npm i
+    - run: npm install -g gulp-cli
+    - run: npm install gulp@3.9.0
+    - run: npm i
     
     - name: Deploy
       uses: stefanos1316/programming_blog
