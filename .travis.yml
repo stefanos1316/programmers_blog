@@ -9,5 +9,5 @@ before_script:
   - npm install gulp@3.9.0
 script:
   - sudo apt-get install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended
-  - npm install
+  - npm --build-from-source install
   - bash tools/travis-deploy.sh

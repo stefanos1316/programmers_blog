@@ -29,6 +29,7 @@
         "acorn": "^7.1.1",
         "amqplib": "^0.5.2",
         "atob": "^2.1.2",
+        "bcrypt": "^4.0.1",
         "bootstrap": "^4.4.1",
         "cryptiles": "^4.1.2",
         "express": "^4.16.3",
