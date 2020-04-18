@@ -28,6 +28,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install -g gulp-cli
     - run: npm install gulp@3.9.0
-    - run: npm i 
+    - run: npm i
+    - name: Deploy to GH-pages
+      run : bash tools/travis-deploy.sh 
       env:
         CI: true
