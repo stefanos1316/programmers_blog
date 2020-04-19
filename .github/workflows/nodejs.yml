@@ -13,29 +13,29 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout 🛎️
+      - name: Checkout 🛎️
         uses: actions/checkout@v2
         with:
           persist-credentials: false
 
-    - name: Install and Build 🔧
-      run: |
-        sudo apt-get install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended  
-        npm install gulp-cli
-        npm install gulp@3.9.0
-        npm i
-        ls -l node_modules
+      - name: Install and Build 🔧
+        run: |
+          sudo apt-get install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended  
+          npm install gulp-cli
+          npm install gulp@3.9.0
+          npm i
+          ls -l node_modules
 
-    - name: Install SSH Client 🔑
-      uses: webfactory/ssh-agent@v0.2.0
-      with:
-          ssh-private-key: ${{ secrets.DEPLOY_KEY }}    
+      - name: Install SSH Client 🔑
+        uses: webfactory/ssh-agent@v0.2.0
+        with:
+            ssh-private-key: ${{ secrets.DEPLOY_KEY }}    
 
-    - name: Deploy 🚀
-      uses: stefanos1316/programmers_blog@v3
-      with:
-          BASE_BRANCH: master
-          SSH: true
-          BRANCH: gh-pages
-          FOLDER: web
-          CLEAN: true
+      - name: Deploy 🚀
+        uses: stefanos1316/programmers_blog@v3
+        with:
+            BASE_BRANCH: master
+            SSH: true
+            BRANCH: gh-pages
+            FOLDER: web
+            CLEAN: true
