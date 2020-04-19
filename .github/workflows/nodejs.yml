@@ -20,9 +20,7 @@ jobs:
    
     - name: Install and Build 🔧
       run: |
-        sudo npm install -g gulp-cli
-        npm install gulp@3.9.0
-        npm i
+        npm ci
         gulp
         ls -l
 
