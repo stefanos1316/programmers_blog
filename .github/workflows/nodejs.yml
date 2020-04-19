@@ -23,7 +23,7 @@ jobs:
         npm install gulp-cli
         npm install gulp@3.9.0
         npm i
-        gulp
+        ls -l node_modules
 
     - name: Install SSH Client 🔑
       uses: webfactory/ssh-agent@v0.2.0
