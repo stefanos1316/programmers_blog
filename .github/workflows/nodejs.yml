@@ -11,15 +11,16 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-    - name: Install latex packages 🛎️
-      run: sudo apt-get install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended  
-   
+    - name: Checkout 🛎️
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
     - name: Install and Build 🔧
       run: |
+        sudo apt-get install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended  
         npm install gulp-cli
         npm install gulp@3.9.0
         npm i
@@ -31,7 +32,7 @@ jobs:
           ssh-private-key: ${{ secrets.DEPLOY_KEY }}    
 
     - name: Deploy 🚀
-      uses: stefanos1316/programmers_blog
+      uses: stefanos1316/programmers_blog@v3
       with:
           BASE_BRANCH: master
           SSH: true
