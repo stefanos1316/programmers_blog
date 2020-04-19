@@ -20,7 +20,7 @@ jobs:
    
     - name: Install and Build 🔧
       run: |
-        npm ci
+        npm install
         gulp
         ls -l
 
