@@ -31,10 +31,10 @@ jobs:
           ssh-private-key: ${{ secrets.DEPLOY_KEY }}    
 
     - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@releases/v3
+      uses: stefanos1316/programmersblog
       with:
           BASE_BRANCH: master
           SSH: true
           BRANCH: gh-pages
-          FOLDER: build
+          FOLDER: web
           CLEAN: true
