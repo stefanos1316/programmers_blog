@@ -32,7 +32,7 @@ jobs:
             ssh-private-key: ${{ secrets.DEPLOY_KEY }}    
 
       - name: Deploy 🚀
-        uses: stefanos1316/programmers_blog@master
+        uses: stefanos1316/programmers_blog@gh-pages
         with:
             BASE_BRANCH: master
             SSH: true
