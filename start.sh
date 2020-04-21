@@ -30,6 +30,9 @@ node_modules/gulp/bin/gulp.js
 
 git config user.name ${GITHUB_ACTOR}
 git config user.email ${GITHUB_ACTOR}@gmail.com
+
+ls -l
+
 git add .
 git commit -m "New site fixes - $(date)"
 git push ${remote_repo} --delete gh-pages || echo Branch not found
