@@ -30,7 +30,7 @@ jobs:
           npm i
           ls -l node_modules
 
-      - name: Deploy to branch gh-pages 🚀
-        uses: stefanos1316/programmers_blog@master
-        with:
-          github_token: ${{ secrets.TOKEN }}
+          # - name: Deploy to branch gh-pages 🚀
+          #uses: stefanos1316/programmers_blog@master
+          #with:
+          #github_token: ${{ secrets.TOKEN }}
