@@ -38,6 +38,7 @@
         "google-protobuf": "^3.11.4",
         "graceful-fs": "^4.2.3",
         "grpc": "^1.24.2",
+        "gulp": "^3.9.1",
         "handlebars": "^4.7.6",
         "hoek": "^5.0.4",
         "jquery": "^3.5.0",
@@ -57,7 +58,6 @@
     },
     "devDependencies": {
         "browser-sync": "^2.26.7",
-        "gulp": "^4.0.2",
         "gulp-clean-css": "^4.3.0",
         "gulp-header": "^2.0.9",
         "gulp-rename": "^1.4.0",

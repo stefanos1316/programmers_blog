@@ -27,36 +27,27 @@ cd ${INPUT_DIRECTORY}
 remote_repo="https://${GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${REPOSITORY}.git"
 git config user.name ${GITHUB_ACTOR}
 git config user.email ${GITHUB_ACTOR}@gmail.com
-git add web/*
+git add .
 git commit -m "New site fixes - $(date)"
 git push ${remote_repo} --delete gh-pages || echo Branch not found
 git push "${remote_repo}" HEAD:${INPUT_BRANCH} --follow-tags $_FORCE_OPTION $_TAGS;
 git checkout -b gh-pages
 git pull ${remote_repo} gh-pages
 
-ls -l
-#mv certificates/* web/
-#mv degress/* web/
-#mv github_activity_overview web/
-#mv proofs/* web/
-#mv publications/* web/
-  
-#rm -rf tools
-#rm -rf styles
-#rm Makefile
-#rm -rf markdown
-#rm -rf README.md
-#rm -rf resume.tuc
+mkdir web
+mv css web/
+mv img web/
+mv scss web/
+mv index.html web/
+mv vendor web
  
-#shopt -s extglob
-#rm -rf !(web)
-#mv web/* ./ && rm -rf web/
+shopt -s extglob
+rm -rf !(web)
+mv web/* ./ && rm -rf web/
 
-#git add .
-#git commit -m "New deploy - $(date)"
-#git push "${remote_repo}" HEAD:${INPUT_BRANCH} --follow-tags $_FORCE_OPTION $_TAGS;
+git add .
+git commit -m "New deploy - $(date)"
+git push "${remote_repo}" HEAD:${INPUT_BRANCH} --follow-tags $_FORCE_OPTION $_TAGS;
 
-#echo "$GITHUB_ACTOR $GITHUB_EMAIL"
-
-#curl https://stefanos1316.github.io/my_curriculum_vitae/ || echo Failed to load
-#curl https://stefanos1316.github.io/my_curriculum_vitae/index.html || echo Failed to load
+curl https://stefanos1316.github.io/programmers_blog/ || echo Failed to load
+curl https://stefanos1316.github.io/programmers_blog/index.html || echo Failed to load
