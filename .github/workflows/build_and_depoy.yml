@@ -19,7 +19,6 @@ jobs:
       run: |
         sudo apt-get install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended  
         npm i
-        node node_modules/gulp/bin/gulp.js
     - name: Deploy to branch gh-pages 🚀
       uses: stefanos1316/programmers_blog@master
       with:

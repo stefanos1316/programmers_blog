@@ -25,6 +25,9 @@ fi
 cd ${INPUT_DIRECTORY}
 
 remote_repo="https://${GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${REPOSITORY}.git"
+
+node_modules/gulp/bin/gulp.js
+
 git config user.name ${GITHUB_ACTOR}
 git config user.email ${GITHUB_ACTOR}@gmail.com
 git add .
