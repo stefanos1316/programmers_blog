@@ -18,8 +18,6 @@ jobs:
     - name: Install and Build 🔧
       run: |
         sudo apt-get install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended  
-        npm install gulp-cli
-        npm install gulp@3.9.1
         npm i
         node node_modules/gulp/bin/gulp.js
     - name: Deploy to branch gh-pages 🚀
