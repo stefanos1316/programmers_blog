@@ -1,7 +1,7 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Node.js CI
+name: Build and Deploy Programmers Blog
 
 on:
   push:
@@ -10,13 +10,17 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@master
         with:
           persist-credentials: false
+      - name: Set up Nodejs 13.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: '13.x'
 
       - name: Install and Build 🔧
         run: |
@@ -26,16 +30,7 @@ jobs:
           npm i
           ls -l node_modules
 
-      - name: Install SSH Client 🔑
-        uses: webfactory/ssh-agent@v0.2.0
+      - name: Deploy to branch gh-pages 🚀
+        uses: stefanos1316/my_curriculum_vitae@master
         with:
-            ssh-private-key: ${{ secrets.DEPLOY_KEY }}    
-
-      - name: Deploy 🚀
-        uses: stefanos1316/programmers_blog@gh-pages
-        with:
-            BASE_BRANCH: master
-            SSH: true
-            BRANCH: gh-pages
-            FOLDER: web
-            CLEAN: true
+          github_token: ${{ secrets.TOKEN }}
