@@ -28,17 +28,10 @@ remote_repo="https://${GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${REPOSITO
 
 node_modules/gulp/bin/gulp.js
 
-git config user.name ${GITHUB_ACTOR}
-git config user.email ${GITHUB_ACTOR}@gmail.com
+git push ${remote_repo} --delete gh-pages || echo Branch not found
+git checkout -b gh-pages
 
 ls -l
-
-git add .
-git commit -m "New site fixes - $(date)"
-git push ${remote_repo} --delete gh-pages || echo Branch not found
-git push "${remote_repo}" HEAD:${INPUT_BRANCH} --follow-tags $_FORCE_OPTION $_TAGS;
-git checkout -b gh-pages
-git pull ${remote_repo} gh-pages
 
 mkdir web
 mv css web/
@@ -46,10 +39,18 @@ mv img web/
 mv scss web/
 mv index.html web/
 mv vendor web
- 
+
 shopt -s extglob
 rm -rf !(web)
 mv web/* ./ && rm -rf web/
+
+git config user.name ${GITHUB_ACTOR}
+git config user.email ${GITHUB_ACTOR}@gmail.com
+git add .
+git commit -m "New site fixes - $(date)"
+git push "${remote_repo}" HEAD:${INPUT_BRANCH} --follow-tags $_FORCE_OPTION $_TAGS;
+
+exit
 
 git add .
 git commit -m "New deploy - $(date)"
